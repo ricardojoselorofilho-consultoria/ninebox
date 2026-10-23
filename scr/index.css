@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { min-height: 100%; }
+  body { @apply bg-marfim text-tinta font-sans antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  :focus-visible { outline: 2px solid #c0934f; outline-offset: 2px; }
+}
+
+@layer components {
+  .num { @apply font-mono; font-variant-numeric: tabular-nums; }
+  .rotulo { @apply text-[11px] font-bold uppercase tracking-[0.08em] text-suave; }
+  .cartao { @apply bg-papel border border-linha rounded-xl; }
+  .campo { @apply h-11 w-full rounded-lg border border-linha bg-papel px-3 text-sm placeholder:text-suave/70 focus:border-verde; }
+  .btn { @apply inline-flex items-center justify-center gap-2 h-10 px-4 rounded-lg text-sm font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-verde { @apply btn bg-verde text-white hover:bg-verde-700; }
+  .btn-ouro { @apply btn bg-ouro text-white hover:bg-ouro-600; }
+  .btn-linha { @apply btn border border-linha bg-papel text-tinta hover:border-verde; }
+  .btn-texto { @apply btn h-auto px-2 py-1 text-suave hover:text-tinta; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
